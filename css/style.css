@@ -1,0 +1,141 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/* this initializes the page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  /* this height means 95% of the screen */
+  height: 95vh;
+  /* linear gradient shades the colors in the direction specified. enter to colors */
+  background-image: linear-gradient(to right bottom, #7ed56fa2, #28b485),
+    url(../img/hero.jpg);
+  background-size: cover;
+  /* Keeps the top the same even when page is a different size */
+  background-position: top;
+  position: relative;
+
+  /* this is used to create the angle clipped at the bottom of the main page 
+  it uses coordinates*/
+  /* The coordinates are x and y, and they are in pairs. 
+  use percent away from the top left corner*/
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  /* width autocalculated by browser */
+  height: 35px;
+}
+
+.logo:hover {
+  animation: rotate 500ms ease-out;
+}
+
+.text-box {
+  /* div that wraps the text box and the 2 spans. */
+  position: absolute;
+  /* Sets start ar 40 % down from top and 50% from left */
+  top: 40%;
+  left: 50%;
+  /* This allows it to center in the page */
+  transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  backface-visibility: hidden;
+}
+
+.heading-primary-main {
+  /* Allows the element to take up the enitre line. Prevents elements from being side by side. */
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  /* creates spacing between letters */
+  letter-spacing: 35px;
+
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  /* animation-delay: 3s; */
+}
+
+.heading-primary-sub {
+  /* allows element to take up the entire line. Prevents the two header elements from being side by side */
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 15px;
+
+  /* calling the animation name, duration, function for how it displays over time */
+  animation: moveInRight 3s ease-out;
+}
+
+/* keyframes are how you make animations to insert elsewhere in the CSS reusable */
+@keyframes moveInLeft {
+  /* The percent is the scale at which things happen */
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* rotates nearly full circle */
+@keyframes rotate {
+  0% {
+    opacity: 0;
+    transform: rotate(-359deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
