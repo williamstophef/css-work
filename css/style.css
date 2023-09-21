@@ -64,6 +64,8 @@ body {
   left: 50%;
   /* This allows it to center in the page */
   transform: translate(-50%, -50%);
+  /* This centers the button */
+  text-align: center;
 }
 
 .heading-primary {
@@ -71,6 +73,7 @@ body {
   text-transform: uppercase;
 
   backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -138,4 +141,39 @@ body {
     opacity: 1;
     transform: rotate(0deg);
   }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  /* gets rid of standard text decorations such as underline and purple color */
+  text-decoration: none;
+  /* Sets the padding to create the size of the button */
+  padding-left: 40px;
+  padding-top: 15px;
+  padding-right: 40px;
+  padding-bottom: 15px;
+  /* Cause element to take up the entire block */
+  display: inline-block;
+  /* Creates the round shape of the button */
+  border-radius: 100px;
+  /* creates the transition delay to all transitions below for the button */
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  /* This moves the button up when hovered */
+  transform: translateY(-3px);
+  /* box shadow 0 in the x direction, 10px in y direction, 20px of blurr and the rgba color with opacity scale of 0.2 */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  /* moves button up when clicked */
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
